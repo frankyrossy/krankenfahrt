@@ -1,3 +1,5 @@
+// pages/_app.js
+import React from 'react'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import { getCurrentUser } from '../lib/auth'
@@ -19,9 +21,14 @@ function MyApp({ Component, pageProps }) {
     }
     
     checkAuth()
-  }, [])
+  }, [router])
 
-  return <Component {...pageProps} />
+  // Füge React Fragment hinzu
+  return (
+    <>
+      <Component {...pageProps} />
+    </>
+  )
 }
 
 export default MyApp

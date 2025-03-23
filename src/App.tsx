@@ -9,7 +9,9 @@ function App() {
   return (
     <>
       <header>
-        <h1>Willkommen zu Krankenfahrt</h1>
+        <h1>Willkommen zu Krankenfahrt 2
+        
+        </h1>
       </header>
       <div>
         <a href="https://vitejs.dev" target="_blank">

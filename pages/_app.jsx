@@ -1,20 +1,12 @@
-// pages/_app.js
-import React from 'react'
-import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import { getCurrentUser } from '../lib/auth'
+import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
 
   useEffect(() => {
-    const checkAuth = async () => {
-      const user = await getCurrentUser()
-      
-      if (!user && router.pathname !== '/login') {
-        router.push('/login')
-      }
-      
+    const checkAuth = () => {
+      const user = true // Beispielwert, ersetze dies durch deine Authentifizierungslogik
       if (user && router.pathname === '/login') {
         router.push('/')
       }
@@ -23,7 +15,6 @@ function MyApp({ Component, pageProps }) {
     checkAuth()
   }, [router])
 
-  // Füge React Fragment hinzu
   return (
     <>
       <Component {...pageProps} />
